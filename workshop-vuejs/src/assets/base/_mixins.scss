@@ -1,0 +1,43 @@
+@import './colorsMixins';
+@import './hoverMixins';
+
+.box-shadow {
+    box-shadow: 2px 2px 10px rgba(10, 10, 10, 0.144);
+}
+
+@mixin box-shadow {
+    box-shadow: 3px 3px 10px rgba(10, 10, 10, 0.144);
+
+}
+
+
+@for $i from 1 through 1000 {
+    .w-#{$i} {
+        width: $i*1% ;
+    }
+    .wpx-#{$i}{
+        width: $i+px ;
+    }
+
+    .w-auto {
+        width: auto ;
+    }
+
+
+}
+
+@for $i from 1 through 1000 {
+    .h-#{$i} {
+        height: $i*1% ;
+    }
+
+    .hpx-#{$i}{
+        height: $i+px ;
+    }
+
+    .h-auto {
+        height: auto ;
+    }
+}
+
+

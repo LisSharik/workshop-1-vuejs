@@ -1,0 +1,18 @@
+@import './colorsMixins';
+
+@mixin hover($bg-color, $text-color) {
+  
+  &:hover {
+    @include bg($bg-color);
+    @include color($text-color);
+  }
+}
+
+
+@each $color-name, $color-value in $colors {
+  @each $bg-name, $bg-value in $colors {
+    .hover-#{"#{$color-name}"}-#{"#{$bg-name}"} {
+      @include hover($bg-name, $color-name);
+    }
+  }
+}

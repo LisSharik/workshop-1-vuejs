@@ -1,0 +1,57 @@
+@mixin flex($justify, $align) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+.flex {
+    display: flex;
+}
+
+
+$justify-options: (
+    "center": center,
+    "start": flex-start,
+    "end": flex-end,
+    "between": space-between,
+    "around": space-around
+);
+
+$align-options: (
+    "center": center,
+    "start": flex-start,
+    "end": flex-end,
+    "baseline": baseline,
+    "stretch": stretch
+);
+
+$flex-directions: (
+    "row": row,
+    "column": column,
+    "row-reverse": row-reverse,
+    "column-reverse": column-reverse
+);
+
+
+@for $i from 1 through 100 {
+    .gap-#{$i} {
+        gap: $i*1% !important;
+    }
+
+    .gappx-#{$i} {
+        gap: $i+px !important;
+    }
+
+}
+
+
+@each $justify-name, $justify-value in $justify-options {
+    @each $align-name, $align-value in $align-options {
+        @each $flex-direction-name, $flex-direction-value in $flex-directions {
+            .flex-#{$flex-direction-name}-#{$justify-name}-#{$align-name} {
+                @include flex($justify-value, $align-value);
+                flex-direction: $flex-direction-value;
+            }
+        }
+    }
+}

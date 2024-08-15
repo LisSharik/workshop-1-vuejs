@@ -1,0 +1,42 @@
+$directions-options: (
+    "top": top,
+    "bottom": bottom,
+    "left": left,
+    "right": right
+);
+
+@for $i from 1 through 100 {
+    @each $direction-name, $direction-value in $directions-options {
+        .m-#{"#{$direction-name}"}-#{$i} {
+            margin-#{$direction-value}: #{$i * 1%} !important;
+        }
+
+        .mpx-#{"#{$direction-name}"}-#{$i} {
+            margin-#{$direction-value}: #{$i}px !important;
+        }
+
+        .p-#{"#{$direction-name}"}-#{$i} {
+            padding-#{$direction-value}: #{$i * 1%} !important;
+        }
+
+        .ppx-#{"#{$direction-name}"}-#{$i} {
+            padding-#{$direction-value}: #{$i}px !important;
+        }
+    }
+
+    .m-#{$i} {
+        margin: #{$i * 1%} !important;
+    }
+
+    .mpx-#{$i} {
+        margin: #{$i}px !important;
+    }
+
+    .p-#{$i} {
+        padding: #{$i * 1%} !important;
+    }
+
+    .ppx-#{$i} {
+        padding: #{$i}px !important;
+    }
+}

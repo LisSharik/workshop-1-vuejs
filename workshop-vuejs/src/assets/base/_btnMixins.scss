@@ -1,0 +1,31 @@
+@import './colorsMixins';
+@import './hoverMixins';
+
+@mixin btn($bg, $color) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    @include bg($bg);
+    @include color($color);
+    transition: all 0.2s ease;
+    font-weight: bold
+   
+}
+
+
+
+
+
+@each $color-name, $color-value in $colors {
+  @each $bg-name, $bg-value in $colors {
+    .btn-#{"#{$color-name}"}-#{"#{$bg-name}"} {
+      @include btn($bg-name, $color-name);
+    }
+  }
+}
+

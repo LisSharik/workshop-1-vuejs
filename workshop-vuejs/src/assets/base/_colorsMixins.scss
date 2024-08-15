@@ -1,0 +1,35 @@
+$colors: (
+    purple: #7367f0,
+    white: #ffff,
+    gray: #f8f8fa,
+    gray-dark: #f3f3f3,
+    black: #333333,
+);
+
+
+
+@mixin bg($color-name) {
+    $color: map-get($colors, $color-name);
+    background-color: $color;
+}
+
+@mixin color($color-name) {
+    $color: map-get($colors, $color-name);
+    color: $color;
+}
+
+
+@each $color-name, $color-value in $colors {
+    .color-#{"#{$color-name}"} {
+        color: $color-value;
+    }
+
+    .bg-#{"#{$color-name}"} {
+        background-color: $color-value;
+    }
+}
+
+
+
+
+

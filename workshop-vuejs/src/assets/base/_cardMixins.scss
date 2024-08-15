@@ -1,0 +1,33 @@
+@import './colorsMixins';
+@import './mixins';
+@import '../../assets/base/fontMixins.scss';
+
+@mixin card {
+    padding: 25px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    @include bg(white);
+    @include box-shadow;
+
+    .info-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        opacity: .9;
+
+
+    }
+
+}
+
+
+@mixin card-profile-teams ($bg, $color) {
+    background-color: $bg;
+    padding: 4px 10px;
+    border-radius: 4px;
+    color: $color;
+    font-weight: 500;
+}
